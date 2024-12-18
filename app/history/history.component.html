@@ -1,0 +1,11 @@
+<p>API call history</p>
+
+<div>
+  <div *ngFor="let h of historyList.historydata">
+      <p>
+        {{h.date}}
+        {{h.type}}
+        {{h.url}}
+      </p>
+  </div>
+</div>

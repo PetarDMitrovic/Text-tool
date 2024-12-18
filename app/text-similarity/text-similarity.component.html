@@ -1,0 +1,13 @@
+<div class="form-group">
+  <label for="FormControlTextarea1">Enter first text here:</label>
+  <textarea class="form-control" id="FormControlTextarea1" rows="10" [(ngModel)]="text1"></textarea>
+</div>
+
+<div class="form-group">
+  <label for="FormControlTextarea2">Enter second text here:</label>
+  <textarea class="form-control" id="FormControlTextarea2" rows="10" [(ngModel)]="text2"></textarea>
+</div>
+<br>
+<button (click)="getSimilarity()">Submit</button>
+
+<p>Similarity equals to {{coeficient}}</p>

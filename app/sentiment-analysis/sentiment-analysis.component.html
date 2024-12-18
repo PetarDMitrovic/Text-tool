@@ -1,0 +1,11 @@
+<p>Text for sentiment analysis:</p>
+<textarea [(ngModel)]="text"></textarea>
+<p>Select your language</p>
+<input type="radio" name="lang" value="EN" id="EN">EN<br>
+<input type="radio" name="lang" value="IT" id="IT">IT<br>
+<input type="radio" name="lang" value="auto" checked id="auto">Auto<br>
+<button (click)="getSentimentAnalysis()">Submit</button>
+<p>Sentiment analysis score is: {{sentiment_analysis.sentiment.score}}</p>
+<p>It's type is: {{sentiment_analysis.sentiment.type}}</p>
+<p>It's color based on score is:</p>
+<canvas id="myCanvas" width="150" height="150"></canvas>

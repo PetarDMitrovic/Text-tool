@@ -1,0 +1,22 @@
+<div class="form-group">
+  <label for="FormControlTextarea">Enter text here:</label>
+  <textarea class="form-control" id="FormControlTextarea" rows="10" [(ngModel)]="text"></textarea>
+</div>
+
+<br>
+<button (click)="getLanguage()">Submit</button>
+
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckClean" [(ngModel)]="clean">
+  <label class="form-check-label" for="flexCheckClean">
+    Clean the text
+  </label>
+</div>
+
+<div>
+  <div *ngFor="let lg of language.detectedLangs;">
+    <h3>{{ lg.lang }} = {{ lg.confidence }}</h3>
+  </div>
+</div>
+
+

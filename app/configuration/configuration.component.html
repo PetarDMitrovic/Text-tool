@@ -1,0 +1,19 @@
+<div>
+  <h2>Configuration</h2>
+  <div>
+    <form (submit)="setToken()" >
+      <div class="form-group mb-2">
+        <label for="token">Token</label>
+        <input type="text" class="form-control" id="token" name="token" placeholder="token" [(ngModel)]="token" >
+
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="saveToken()">Submit</button>
+
+    </form>
+
+    <br>
+    Token Local: {{ getToken()}}
+    <br>
+    Token Temp: {{token}}
+  </div>
+</div>

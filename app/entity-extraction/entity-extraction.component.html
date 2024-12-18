@@ -1,0 +1,38 @@
+<div>
+  <p>Insert your text here:</p>
+  <textarea [(ngModel)]="text"></textarea>
+</div>
+<br>
+<div>
+  <p>Min confidence slider</p>
+  <input [(ngModel)]="min_confidence" type="range" min="0" max="1" value="0.6" class="slider" step="0.01">
+</div>
+<div>
+  <p>Include parameters:</p>
+  <input type="checkbox" name="image" [(ngModel)]="image">
+  <label>Image</label>
+  <br>
+  <input type="checkbox" name="abstract" [(ngModel)]="abstract">
+  <label>Abstract</label>
+  <br>
+  <input type="checkbox" name="category" [(ngModel)]="category">
+  <label>Category</label>
+</div>
+<button (click)="getResponse()">Submit</button>
+
+<div>
+  <div *ngFor="let annotation of response.annotations;">
+    <h3>{{annotation.spot}}</h3>
+    <div *ngIf="(image==true)">
+      <img src="{{annotation.image.thumbnail}}" width="300px" height="300px">
+    </div>
+    <div *ngIf="(abstract==true)">
+      <p>{{annotation.abstract}}</p>
+    </div>
+    <div *ngIf="(category==true)">
+      <div *ngFor="let cat of annotation.categories">
+        <p>{{cat}}</p>
+      </div>
+    </div>
+  </div>
+</div>
